@@ -1,0 +1,35 @@
+{% macro list_pages() %}
+<div class="posts">
+    
+    {%- for page in paginator.pages -%}
+    
+    <div class="post on-list">
+        <h1 class="post-title">
+            <a href="{{ page.permalink }}">{{ page.title }}</a>
+        </h1>
+        
+        
+        {{ posts::meta(page=page, author=config.extra.show_author) }}
+        
+        {#-                NOTE              -#}
+        {#- --------------------------------  -#}
+        {#- Skipping the Cover page implementation. Not included/covered for now. -#}
+
+        <div class="post-content">
+            {%  if page.description -%}
+            {{ page.description }}
+            {#- end if-check for description -#}
+            {%  endif -%}
+        </div>
+        {% if page.description -%}
+        <div>
+            <a class="read-more button" href="{{ page.permalink }}">{{ config.extra.read_more }} →</a>
+        </div>
+        {% endif -%}
+    </div>
+    {# End of pagination for-loop #}
+    {%- endfor -%}
+    {#- I don't put pagination here like Terminal does. I don't like how
+    the buttons move with the size of post entries in the content div. -#}
+</div>
+{% endmacro list_pages %}

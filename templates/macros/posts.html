@@ -1,0 +1,84 @@
+{% macro section_meta(section, author) %}
+    <div class="post-meta">
+        <span class="post-date">
+            
+            {%- if section.extra["date"] -%}
+                {{ section.extra["date"]["$__toml_private_datetime"] | date(format="%Y.%m.%d") }}
+                {# end of section.date if-check #}
+            {%- endif -%}
+        </span>
+
+        <span class="post-author">
+            {%- if author -%}
+                {{ utils::author(section=section) }}
+            {%- endif -%}
+        </span>
+    </div>
+{% endmacro section_meta %}
+
+{% macro meta(page, author) %}
+    <div class="post-meta">
+        <span class="post-date">
+            {%- if page.date -%}
+                {{ page.date | date(format="%Y.%m.%d") }}
+                {# end of page.date if-check #}
+            {%- endif -%}
+        </span>
+
+        <span class="post-author">
+            {%- if author -%}
+                {{ utils::author(page=page) }}
+            {%- endif -%}
+        </span>
+
+        {{  posts::taxonomies(taxonomy=page.taxonomies,
+            disp_cat=config.extra.show_categories,
+            disp_tag=config.extra.show_tags) }}
+    </div>
+{% endmacro section_meta %}
+
+{% macro taxonomies(taxonomy, disp_cat, disp_tag) %}
+
+    {% if disp_cat and disp_tag -%}
+        {% if taxonomy.categories -%}
+            {{ posts::categories(categories=taxonomy.categories) }}
+            {# end if-check for categories #}
+        {%- endif -%}
+        
+        {% if taxonomy.tags -%}
+            {{ posts::tags(tags=taxonomy.tags) }}
+            {# end if-check for tags #}
+        {% endif -%}
+    {% elif disp_cat -%}
+        {% if taxonomy.categories-%}
+            {{ posts::categories(categories=taxonomy.categories) }}
+            {# end if-check for categories #}
+        {% endif -%}
+    {% elif disp_tag -%}
+        {% if taxonomy.tags -%}
+            {{ posts::tags(tags=taxonomy.tags) }}
+            {# end if-check for tags #}
+        {% endif -%}
+        {# end if-check for BOTH disp bools #}
+    {% endif -%}
+{% endmacro taxonomies %}
+
+{% macro categories(categories) %}
+    :: {
+    {%- for cat in categories -%}
+        {%- if loop.last -%}
+            <a href="{{ get_taxonomy_url(kind="categories", name=cat ) }}">{{ cat }}</a>
+        {%- else -%}
+            <a href="{{ get_taxonomy_url(kind="categories", name=cat ) }}">{{ cat }}</a>,
+            {# end of if-check for whether last item or not #}
+        {%- endif -%}
+    {%- endfor -%}} {# <--- NOTE: OPEN CURLY BRACE #}
+{% endmacro categories %}
+
+{% macro tags(tags) %}
+    ::
+    {% for tag in tags -%}
+        #<a href="{{get_taxonomy_url(kind="tags", name=tag )}}">{{ tag }}</a>
+        {# end of tags for-loop #}
+    {% endfor -%}
+{% endmacro tags %}

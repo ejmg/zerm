@@ -1,0 +1,24 @@
+{% macro paginate() %}
+    <div class="pagination">
+        <div class="pagination__buttons">
+            {% if paginator.previous -%}
+                <span class="button previous">
+                    <a href="{{ paginator.previous }}">
+                        <span class="button__icon">←</span>
+                        <span class="button__text">newer</span>
+                    </a>
+                </span>
+                {# end of if-check for page.previous #}
+            {%  endif -%}
+            {% if paginator.next -%}
+                {# end of if-check for page.next #}
+                <span class="button next">
+                    <a href="{{ paginator.next }}">
+                        <span class="button__text">older</span>
+                        <span class="button__icon">→</span>
+                    </a>
+                </span>
+            {% endif-%}
+        </div>
+    </div>
+{% endmacro paginate %}

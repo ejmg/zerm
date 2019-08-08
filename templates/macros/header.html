@@ -1,0 +1,17 @@
+{% macro header(config) %}
+<header class="header">
+    <div class="header__inner">
+        <div class="header__logo">
+            {{ logo::logo() }}
+        </div>
+        <div class="menu-trigger">menu</div>
+    </div>
+    {# Check if there are menu items to render, yes if > 0 #}
+    {%- set num = config.extra.main_menu | length -%}
+    {% if num > 0 -%}
+        {{ menu::menu() }}
+    {#% include "snippets/menu.html" -%#}
+    {% endif -%}
+</header>
+{% endmacro header %}
+

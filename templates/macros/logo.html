@@ -1,0 +1,7 @@
+{%- macro logo() -%}
+<a href="{%- if config.extra.logo_home_link -%}{{ config.extra.logo_home_link }}{%- else -%}{{ config.base_url }}{%- endif -%}">
+    <div class="logo">
+        {{config.extra.logo_text | default(value="Terminal") }}
+    </div>
+</a>
+{%- endmacro logo -%}

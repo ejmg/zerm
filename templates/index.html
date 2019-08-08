@@ -1,0 +1,57 @@
+{% import "macros/head.html" as head -%}
+{% import "macros/logo.html" as logo -%}
+{% import "macros/header.html" as header -%}
+{% import "macros/extended_header.html" as extended_header -%}
+{% import "macros/lists.html" as lists -%}
+{% import "macros/posts.html" as posts -%}
+{% import "macros/social.html" as social -%}
+{% import "macros/utils.html" as utils -%}
+{% import "macros/menu.html" as menu -%}
+{% import "macros/pagination.html" as pagination -%}
+{% import "macros/footer.html" as footer -%}
+{% import "macros/extended_footer.html" as extended_footer -%}
+
+<!DOCTYPE html>
+<html lang="{{ config.default_language }}">
+    <head>
+        {%- block title %}
+        <title>{{ config.title }}</title>
+        {%- endblock title -%}
+
+        {{ head::head(config=config) }}
+    </head>
+    <body>
+        {#
+        "container full" when width == True, regardless of center
+        "container center" when only center == True
+        "container" when both false.
+        #}
+        {% if config.extra.full_width -%}
+        {% set container = "container full" -%}
+        {% elif config.extra.center -%}
+        {% set container = "container center" -%}
+        {% else -%}
+        {% set container = "container" -%}
+        {% endif -%}
+
+        <div class="{{ container }}">
+            {{ header::header(config=config) }}
+            <div class="content">
+                {% block main -%}
+                {{ lists::list_pages() }}
+                {# include "snippets/list.html" -#}
+                {% endblock main -%}
+            </div>
+            {#- 
+            I keep pagination out of list, unlike Terminal, because I don't
+            like how the pagination buttons move with the width of the content 
+            div.
+            -#}
+            {{ pagination::paginate() }}
+
+            {% block footer -%}
+                {{ footer::footer() }}
+            {% endblock footer -%}
+        </div>
+    </body>
+</html>

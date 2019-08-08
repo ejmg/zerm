@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+{%- block main -%}
+    <div class="post">
+
+        <h1 class="post-title">{categories}</h1>
+        <ul>
+            {%- for cat in terms -%}
+                <li class="tag-list">
+                    <a href="{{ get_taxonomy_url(kind="categories", name=cat.name) }}">{{ "{" }}{{ cat.name }}{{ "}" }}</a>
+                    ({{ cat.pages | length }} post{{ cat.pages | length | pluralize }})
+                </li>
+                {# End of pagination for-loop #}
+            {%- endfor -%}
+            {#- I don't put pagination here like Terminal does. I don't like how
+            the buttons move with the size of post entries in the content div. -#}
+        </ul>
+    </div>
+{%- endblock main -%}

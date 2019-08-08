@@ -1,0 +1,42 @@
+{% macro og_preview() %}
+    <meta property="og:title" content="{{ social::og_title() }}" />
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="{{ current_url }}"/>
+    <meta property="og:description" content="{{ social::og_description() }}"/>
+    <meta property="og:image" content="{{ get_url(path="madrid_cropped.png") }}"/>
+{% endmacro og_preview %}
+
+{% macro og_description() %}
+    {% if section -%}
+        {%-  if section.description-%}
+            {{ section.description }}
+        {%- else -%}
+            {{ config.description }}
+        {%- endif -%}
+    {%- elif page -%}
+        {%- if page.summary | string -%}
+            {{ page.summary | striptags | truncate(length=200) }}
+        {%- elif page.description -%}
+            {{ page.description }}
+        {%- else -%}
+            {{ config.description }}
+        {%- endif -%}
+    {%- endif %}
+{% endmacro og_description %}
+
+{% macro og_title() %}
+    {% if section -%}
+        ageof.info ::
+        {% if  section.title -%}
+            {{ section.title | striptags }}
+        {%- else -%}
+            config.description
+        {%- endif -%}
+    {%- elif page -%}
+        {%- if page.title -%}
+            {{ page.title | striptags }}
+        {%- else -%}
+            config.description
+        {%- endif -%}
+    {%- endif %}
+{% endmacro og_title %}
