@@ -9,8 +9,8 @@
 {% endmacro og_preview %}
 
 {% macro og_description() %}
-    {% if section -%}
-        {%-  if section.description-%}
+    {%- if section -%}
+        {%-  if section.description -%}
             {{ section.description }}
         {%- else -%}
             {{ config.description }}
@@ -23,18 +23,18 @@
         {%- else -%}
             {{ config.description }}
         {%- endif -%}
-    {%- endif %}
+    {%- endif -%}
 {% endmacro og_description %}
 
 {% macro og_title() %}
-    {{ config.title }} -
-    {% if section -%}
+    {{ config.title }} -&nbsp;
+    {%- if section -%}
         {%- if section.title -%}
             {{ section.title | striptags }}
         {%- else -%}
             {{ config.description }}
         {%- endif -%}
-    {% elif page -%}
+    {%- elif page -%}
         {%- if page.title -%}
             {{ page.title | striptags }}
         {%- else -%}

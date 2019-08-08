@@ -1,4 +1,4 @@
-{% macro header(config) %}
+{% macro header() %}
 <header class="header">
     <div class="header__inner">
         <div class="header__logo">
@@ -10,7 +10,6 @@
     {%- set num = config.extra.main_menu | length -%}
     {% if num > 0 -%}
         {{ menu::menu() }}
-    {#% include "snippets/menu.html" -%#}
     {% endif -%}
 </header>
 {% endmacro header %}

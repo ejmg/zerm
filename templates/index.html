@@ -18,7 +18,7 @@
         <title>{{ config.title }}</title>
         {%- endblock title -%}
 
-        {{ head::head(config=config) }}
+        {{ head::head() }}
     </head>
     <body>
         {#
@@ -35,7 +35,7 @@
         {% endif -%}
 
         <div class="{{ container }}">
-            {{ header::header(config=config) }}
+            {{ header::header() }}
             <div class="content">
                 {% block main -%}
                 {{ lists::list_pages() }}
