@@ -13,7 +13,8 @@
                     Original theme has sub-children checks on main-menu, not worrying about that here.
                     #}
                     <li>
-                        <a href="{{ menu_item.url | replace(from="$BASE_URL", to=config.base_url) }}">{{ menu_item.name }}</a>
+                        {%- set _url = menu_item.url ~ "_index.md" | replace(from="$BASE_URL", to="@")-%}
+                        <a href="{{ get_url(path=_url) }}">{{ menu_item.name }}</a>
                     </li>
                 {% endfor -%}
 
@@ -44,7 +45,8 @@
     {%- for menu_item in menu -%}
         {# skipping sub-child check #}
         <li>
-            <a href="{{ menu_item.url | replace(from="$BASE_URL", to=config.base_url) }}">{{ menu_item.name }}</a>
+            {%- set _url = menu_item.url ~ "_index.md" | replace(from="$BASE_URL", to="@")-%}
+            <a href="{{ get_url(path=_url) }}">{{ menu_item.name }}</a>
         </li>
     {%- endfor-%}
 {% endmacro items %}
