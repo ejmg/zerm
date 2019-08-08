@@ -1,17 +1,4 @@
-{% macro head(config) %}
-
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <meta name="description" content={{ config.description }}/>
-
-    {# -- Theme CSS -- #}
-    <link rel="stylesheet" href="{{ get_url(path="style.css") }}">
-    {% if config.extra.theme_color != "orange" -%}
-        {% set color = "color/" ~ config.extra.theme_color ~ ".css" -%}
-        <link rel="stylesheet" href="{{ get_url(path=color) }}">
-    {%- else -%}
-        <link rel="stylesheet" href="{{ get_url(path="color/orange.css") }}">
-    {% endif %}
+{% macro head() %}
 
     {#- TODO:
     - [x] add rss
@@ -20,7 +7,28 @@
     - [ ] twitter
     - [ ] maybe google adsense
     -#}
-    {{ social::og_preview() }}
+
+    {%- block general_meta -%}
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+        <meta name="description" content={{ config.description }}/>
+    {%- endblock general_meta -%}
+
+    {%- block og_meta -%}
+        {{ social::og_preview() }}
+    {%- endblock og_meta -%}
+
+    {# -- Theme CSS -- #}
+    {%- block css_styling -%}
+        <link rel="stylesheet" href="{{ get_url(path="style.css") }}">
+        {% if config.extra.theme_color != "orange" -%}
+            {% set color = "color/" ~ config.extra.theme_color ~ ".css" -%}
+            <link rel="stylesheet" href="{{ get_url(path=color) }}">
+        {%- else -%}
+            <link rel="stylesheet" href="{{ get_url(path="color/orange.css") }}">
+        {% endif %}
+    {%- endblock css_styling -%}
+
 
     {%- if config.extra.favicon is defined -%}
         <link rel="shortcut icon" href="{{ get_url(path=config.extra.favicon) }}" type="image/x-icon" />

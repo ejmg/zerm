@@ -1,14 +1,16 @@
 {% macro footer() %}
     <footer class="footer">
         <div class="footer__inner">
-            {%- if config.extra.copyright -%}
-                <div class="copyright copyright--user">{{ config.extra.copyright | safe }}</div>
-            {%- else -%}
-                <div class="copyright">
-                    <span>© {{ now() | date(format="%Y") }} <a href="https://github.com/ejmg/zerm">Zerm</a> :: Powered by <a href="https://www.getzola.org/">Zola</a></span>
-                    <span>:: Theme made by <a href="https://github.com/ejmg">ejmg</a></span>
-                </div>
-            {%- endif -%}
+            {%- block copyright -%}
+                {%- if config.extra.copyright -%}
+                    <div class="copyright copyright--user">{{ config.extra.copyright | safe }}</div>
+                {%- else -%}
+                    <div class="copyright">
+                        <span>© {{ now() | date(format="%Y") }} <a href="https://github.com/ejmg/zerm">Zerm</a> :: Powered by <a href="https://www.getzola.org/">Zola</a></span>
+                        <span>:: Theme made by <a href="https://github.com/ejmg">ejmg</a></span>
+                    </div>
+                {%- endif -%}
+            {%- endblock copyright -%}
         </div>
     </footer>
 
