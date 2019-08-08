@@ -3,7 +3,9 @@
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="{{ current_url }}"/>
     <meta property="og:description" content="{{ social::og_description() }}"/>
-    <meta property="og:image" content="{{ get_url(path="madrid_cropped.png") }}"/>
+    {%- if config.extra.og_preview_img -%}
+        <meta property="og:image" content="{{ get_url(path=config.extra.og_preview_img) }}"/>
+    {%- endif -%}
 {% endmacro og_preview %}
 
 {% macro og_description() %}
@@ -25,8 +27,8 @@
 {% endmacro og_description %}
 
 {% macro og_title() %}
+    {{ config.title }} - 
     {% if section -%}
-        ageof.info ::
         {% if  section.title -%}
             {{ section.title | striptags }}
         {%- else -%}

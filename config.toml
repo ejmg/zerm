@@ -1,9 +1,9 @@
 # The URL the site will be built for
-base_url = "getzola.org"
+base_url = "/"
 
 # Used in RSS by default
 title = "My blog!"
-description = "placeholder text for now"
+description = "placeholder description text for your blog!"
 
 # The default language, used in RSS
 # TODO: I would love to support more languages and make this easy to handle
@@ -64,8 +64,13 @@ full_width = false
 # center theme with default width.
 center = false
 
-# set a custom favicon. Must be placed in root of static/ directory..
-# favicon = # "favicon-96x96.png"
+# set a custom favicon. Must be placed in root of static/ directory...
+# favicon = ""
+
+
+# Set a custom preview image for your website when posted as a link.
+# Must be placed in root of static/ directory...
+# og_preview_img = ""
 
 # Copyright notice if desired. Defaults to 
 # copyright = "copyright notice here"
