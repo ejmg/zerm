@@ -67,7 +67,9 @@
             like how the pagination buttons move with the width of the content 
             div.
             -#}
-            {{ pagination::paginate() }}
+            {%- block pagination -%}
+                {{ pagination::paginate() }}
+            {%- endblock pagination -%}
 
             {%- block footer -%}
                 <footer class="footer">
