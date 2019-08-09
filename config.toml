@@ -59,6 +59,12 @@ show_tags = true
 # ["orange", "blue", "red", "green", "pink"]
 theme_color = "orange"
 
+# Custom css to style over the defaults. This is useful when you only have a
+# few small tweaks to make rather than a major rehaul to the theme.
+# It would be best to make this a proper .sass or .scss file in sass/ rather
+# than placing in static/
+# custom_css = "custom.css"
+
 # How many menu items to show on desktop. if you set this to 0, only submenu
 # button will be visible.
 show_menu_items = 2
@@ -89,8 +95,8 @@ logo_home_link = "/"
 # Menu items to display. You define a url and the name of the menu item.
 # NOTE: `$BASE_URL/` must be included in the url name.
 main_menu = [
-              {url="$BASE_URL/about/", name="about"},
-              {url="$BASE_URL/contact/", name="contact"},
+              {url="/about/", name="about"},
+              {url="/contact/", name="contact"},
 ]
 
 # Displayed as title of drop-down menu when size of main_menu > show_menu_items.
