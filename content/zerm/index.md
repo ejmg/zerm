@@ -24,8 +24,8 @@ While it's largely faithful to the original, there are some changes:
     figuring it out myself.
 - no preview images. I want a theme that is focused on content.
 - support for anchor links.
-- Other small, opinionated changes that I think lend minimalism of Zerm as well
-  as its aesthetic.
+- Other small, opinionated changes that I think lend to the minimalism and
+  aesthetic of zerm.
   
   
 Things this theme does not have but either Terminal or Terminimal might:
