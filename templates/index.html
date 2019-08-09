@@ -14,11 +14,30 @@
 <!DOCTYPE html>
 <html lang="{{ config.default_language }}">
     <head>
-        {%- block title %}
-        <title>{{ config.title }}</title>
+        {%- block title -%}
+            <title>{{ config.title }}</title>
         {%- endblock title -%}
 
-        {{ head::head() }}
+        {%- block general_meta -%}
+            {{ head::general_meta() }}
+        {%- endblock general_meta -%}
+
+        {%- block og_preview -%}
+            {{ social::og_preview() }}
+        {%- endblock og_preview -%}
+        
+        {%- block css -%}
+            {{ head::styling() }}
+        {%- endblock css -%}
+
+        {%- block favicon -%}
+            {{ head::favicon() }}
+        {%- endblock favicon -%}
+
+        {%- block rss -%}
+            {{ head::rss() }}
+        {%- endblock rss -%}
+        
     </head>
     <body>
         {#
@@ -26,21 +45,22 @@
         "container center" when only center == True
         "container" when both false.
         #}
-        {% if config.extra.full_width -%}
-        {% set container = "container full" -%}
-        {% elif config.extra.center -%}
-        {% set container = "container center" -%}
-        {% else -%}
-        {% set container = "container" -%}
-        {% endif -%}
+        {%- if config.extra.full_width -%}
+            {%- set container = "container full" -%}
+        {%- elif config.extra.center -%}
+            {%- set container = "container center" -%}
+        {%- else -%}
+            {%- set container = "container" -%}
+        {%- endif -%}
 
         <div class="{{ container }}">
-            {{ header::header() }}
+            {%- block header -%}
+                {{ header::header() }}
+            {%- endblock header -%}
             <div class="content">
-                {% block main -%}
-                {{ lists::list_pages() }}
-                {# include "snippets/list.html" -#}
-                {% endblock main -%}
+                {%-  block main -%}
+                    {{ lists::list_pages() }}
+                {%- endblock main -%}
             </div>
             {#- 
             I keep pagination out of list, unlike Terminal, because I don't
@@ -49,9 +69,20 @@
             -#}
             {{ pagination::paginate() }}
 
-            {% block footer -%}
-                {{ footer::footer() }}
-            {% endblock footer -%}
+            {%- block footer -%}
+                <footer class="footer">
+                    <div class="footer__inner">
+                        {%- block copyright -%}
+                            {{ footer::copyright() }}
+                        {%- endblock copyright -%}
+
+                        {%- block script -%}
+                            {{ footer::script() }}
+                        {%- endblock script -%}
+                    </div>
+                    {{ extended_footer::extended_footer() }}
+                </footer>
+            {%- endblock footer -%}
         </div>
     </body>
 </html>
