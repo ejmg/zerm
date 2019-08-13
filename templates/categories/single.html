@@ -11,7 +11,16 @@
                 <li class="tag-list">
                     {{ post.date | date(format="%Y.%m.%d") }}
                     :: <a href="{{ post.permalink }}">{{ post.title }}</a>
-                    :: {{ "{" }}{% for cat in post.taxonomies["categories"] -%} <a href="{%- set _cat = get_taxonomy_url(kind="categories", name=cat) -%}{{ _cat }}">{{ cat }},</a> {% endfor %} }
+                    :: {{ "{" }}
+                    {%- for cat in post.taxonomies["categories"] -%}
+                        {%- if loop.last -%}
+                            <a href="{%- set _cat = get_taxonomy_url(kind="categories", name=cat) -%}{{ _cat }}">{{ cat }}</a>
+                        {%- elif loop.first -%}
+                                <a href="{%- set _cat = get_taxonomy_url(kind="categories", name=cat) -%}{{ _cat }}">{{ cat }}</a>,&nbsp;
+                        {%- else -%}
+                            <a href="{%- set _cat = get_taxonomy_url(kind="categories", name=cat) -%}{{ _cat }}">{{ cat }}</a>,
+                            {%- endif -%}
+                    {% endfor %}{{ "}" }}
                 </li>
                 {# End of pagination for-loop #}
             {%- endfor -%}
