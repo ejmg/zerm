@@ -10,6 +10,9 @@ description = "placeholder description text for your blog!"
 # with other facets of the theme.
 default_language = "en"
 
+# Whether to generate a RSS feed automatically
+generate_rss = true
+
 # Theme name to use.
 # NOTE: should not need to mess with this if you are using zerm directly, i.e. cloning the
 # repository at root and not using as directed by the Zola docs via themes/ directory.
