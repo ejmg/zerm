@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>what is zerm? - you!</title>
+    
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="placeholder description text for your blog!"/>
+
+    <meta property="og:title" content="
+    My blog! -&nbsp;what is zerm?" />
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;zerm&#x2F;"/>
+    <meta property="og:description" content="a summary of what zerm is and why it is different."/>
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;style.css">
+    <link rel="stylesheet" href=" http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;color&#x2F;orange.css">
+    
+</head>
+    <body>
+        <div class="container">
+<header class="header">
+    <div class="header__inner">
+        <div class="header__logo">
+            <a href="&#x2F;">
+    <div class="logo">
+        zerm
+    </div>
+</a>
+        </div>
+        <div class="menu-trigger">menu</div>
+    </div>
+    
+    <nav class="menu">
+        <ul class="menu__inner menu__inner--desktop">
+            
+            
+                    <li>
+                        <a href="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;about">about</a>
+                    </li>
+                
+                    <li>
+                        <a href="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;contact">contact</a>
+                    </li>
+                
+            </ul>
+
+        <ul class="menu__inner menu__inner--mobile">
+            
+        <li>
+            <a href="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;about">about</a>
+        </li>
+        <li>
+            <a href="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;contact">contact</a>
+        </li>
+        </ul>
+    </nav>
+
+    </header>
+<div class="content"><div class="post">
+        <h1 class="post-title">
+            <a href="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;zerm&#x2F;">what is zerm?</a>
+        </h1>
+        
+    <div class="post-meta">
+        <span class="post-date">2019.08.07
+                </span>
+
+        <span class="post-author"></span>
+
+        
+
+    
+    :: {<a href="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;categories&#x2F;programming&#x2F;">programming</a>,
+            <a href="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;categories&#x2F;misc&#x2F;">misc.</a>} 
+
+            
+    ::
+    #<a href="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;tags&#x2F;rust&#x2F;">rust</a>
+        
+    #<a href="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;tags&#x2F;test&#x2F;">test</a>
+        
+    #<a href="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;tags&#x2F;zola&#x2F;">zola</a>
+        
+    
+            
+        
+    </div>
+
+
+
+        
+
+        <div class="post-content">
+            <h1 id="hello">hello<a class="zola-anchor" href="#hello" aria-label="Anchor link for: hello">§</a>
+</h1>
+<p>This is zerm, a minimalist theme for Zola based<sup class="footnote-reference"><a href="#1">1</a></sup> off of <a href="https://twitter.com/panr">panr's</a>
+theme for Hugo.</p>
+<p>While it's largely faithful to the original, there are some changes:</p>
+<ul>
+<li>no prism.js integration, instead we use Zola's syntax highlighting to reduce overhead.</li>
+<li>removal of PostCSS and leveraging Zola's use of Sass for simple styling.
+<ul>
+<li>much thanks to <a href="https://github.com/pawroman/zola-theme-terminimal/">Paweł
+Romanowski's</a>
+independent fork of Terminal. Their Sass stylings saved me the overhead of
+figuring it out myself.</li>
+</ul>
+</li>
+<li>no preview images. I want a theme that is focused on content.</li>
+<li>support for anchor links.</li>
+<li>Other small, opinionated changes that I think lend to the minimalism and
+aesthetic of zerm.</li>
+</ul>
+<p>Things this theme does not have but either Terminal or Terminimal might:</p>
+<ul>
+<li>better short-codes for things like embedding videos or images, though I will
+work on this over time.</li>
+<li>better support for things like comments and social media. As of now, I have
+no plans to add this but <a href="https://github.com/ejmg/zerm/pulls">PR's are always
+<strong>welcomed</strong></a>.</li>
+</ul>
+<h2 id="a-quick-demo">A quick demo<a class="zola-anchor" href="#a-quick-demo" aria-label="Anchor link for: a-quick-demo">§</a>
+</h2>
+<p><code>println!(&quot;inline code&quot;);</code></p>
+<pre style="background-color:#191919;">
+<code><span style="color:#80d500;">fn </span><span style="color:#ffffff;">main</span><span style="color:#cccccc;">(</span><span style="font-style:italic;color:#8aa6c1;">n</span><span style="color:#cccccc;">: String) {
+    println!(</span><span style="color:#ffd700;">&quot;hello, zola!&quot;</span><span style="color:#cccccc;">);
+}
+</span></code></pre><h3 id="header-iii">Header III<a class="zola-anchor" href="#header-iii" aria-label="Anchor link for: header-iii">§</a>
+</h3>
+<blockquote>
+<p>a somewhat kinda maybe large quote that maybe spans
+more than one line but I mean really who even cares
+okay maybe I do but point being is yes nice.</p>
+</blockquote>
+<h4 id="header-iv">Header IV<a class="zola-anchor" href="#header-iv" aria-label="Anchor link for: header-iv">§</a>
+</h4>
+<table><thead><tr><th align="center">hello</th><th align="center">tables</th><th>nice</th></tr></thead><tbody>
+<tr><td align="center">wow</td><td align="center">much love</td><td>yes</td></tr>
+</tbody></table>
+<p>Like zerm? Then <a href="https://www.getzola.org/documentation/getting-started/installation/">install
+Zola</a> and
+<a href="https://www.getzola.org/documentation/themes/installing-and-using-themes/#installing-a-theme">get started</a>!</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>fork? port? a little bit of the former, more of the latter?</p>
+</div>
+
+        </div>
+        
+    
+</div></div>
+            
+    <div class="pagination">
+        <div class="pagination__buttons">
+            </div>
+    </div>
+<footer class="footer">
+                    <div class="footer__inner"><div class="copyright">
+            <span>© 2020 <a href="https://github.com/ejmg/zerm">zerm</a> :: Powered by <a href="https://www.getzola.org/">Zola</a></span>
+            <span>:: Theme made by <a href="https://github.com/ejmg">ejmg</a></span>
+        </div>
+    <script type="text/javascript" src="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;assets&#x2F;js&#x2F;main.js"></script>
+</div>
+                    
+
+                </footer></div>
+    <script src="/livereload.js?port=1024&amp;mindelay=10"></script></body>
+</html>

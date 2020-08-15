@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>demo - you!</title>
+    
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="placeholder description text for your blog!"/>
+
+    <meta property="og:title" content="
+    My blog! -&nbsp;demo" />
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;demo&#x2F;"/>
+    <meta property="og:description" content="a basic demo of zola."/>
+    <link rel="stylesheet" href="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;style.css">
+    <link rel="stylesheet" href=" http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;color&#x2F;orange.css">
+    
+</head>
+    <body>
+        <div class="container">
+<header class="header">
+    <div class="header__inner">
+        <div class="header__logo">
+            <a href="&#x2F;">
+    <div class="logo">
+        zerm
+    </div>
+</a>
+        </div>
+        <div class="menu-trigger">menu</div>
+    </div>
+    
+    <nav class="menu">
+        <ul class="menu__inner menu__inner--desktop">
+            
+            
+                    <li>
+                        <a href="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;about">about</a>
+                    </li>
+                
+                    <li>
+                        <a href="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;contact">contact</a>
+                    </li>
+                
+            </ul>
+
+        <ul class="menu__inner menu__inner--mobile">
+            
+        <li>
+            <a href="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;about">about</a>
+        </li>
+        <li>
+            <a href="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;contact">contact</a>
+        </li>
+        </ul>
+    </nav>
+
+    </header>
+<div class="content"><div class="post">
+        <h1 class="post-title">
+            <a href="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;demo&#x2F;">demo</a>
+        </h1>
+        
+    <div class="post-meta">
+        <span class="post-date">2019.08.06
+                </span>
+
+        <span class="post-author"></span>
+
+        
+
+    
+    :: {<a href="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;categories&#x2F;programming&#x2F;">programming</a>,
+            <a href="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;categories&#x2F;wu-tang&#x2F;">wu tang</a>} 
+
+            
+    ::
+    #<a href="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;tags&#x2F;demo&#x2F;">demo</a>
+        
+    #<a href="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;tags&#x2F;zola&#x2F;">zola</a>
+        
+    #<a href="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;tags&#x2F;highlighting&#x2F;">highlighting</a>
+        
+    
+            
+        
+    </div>
+
+
+
+        
+
+        <div class="post-content">
+            <p>Here's a general demo of Zola and how things look with zerm.</p>
+<h1 id="header-i">Header I<a class="zola-anchor" href="#header-i" aria-label="Anchor link for: header-i">§</a>
+</h1>
+<p>Inline code: <code>println!(&quot;Wu Tang!&quot;);</code></p>
+<p>Zola has built in syntax highlighting. If there's not a theme you like, you can
+easily add more.</p>
+<p>zerm uses Fira Code fonts, which means we get ligatures in addition to
+Zola's powerful syntax highlighting ✨.</p>
+<pre style="background-color:#191919;">
+<code><span style="color:#80d500;">fn </span><span style="color:#ffffff;">foo</span><span style="color:#cccccc;">(</span><span style="font-style:italic;color:#8aa6c1;">arg</span><span style="color:#cccccc;">: String) -&gt; </span><span style="color:#8aa6c1;">Result</span><span style="color:#cccccc;">&lt;</span><span style="color:#80d500;">u32</span><span style="color:#cccccc;">, </span><span style="color:#80d500;">Io::</span><span style="color:#cccccc;">Error&gt; {
+    println!(</span><span style="color:#ffd700;">&quot;Nice!&quot;</span><span style="color:#cccccc;">); </span><span style="background-color:#171717;color:#616161;">// TODO: the thingy
+</span><span style="color:#cccccc;">    </span><span style="color:#80d500;">if </span><span style="color:#eddd5a;">1 </span><span style="color:#ffffff;">!= </span><span style="color:#eddd5a;">0 </span><span style="color:#cccccc;">{
+        println!(</span><span style="color:#ffd700;">&quot;How many ligatures can I contrive??&quot;</span><span style="color:#cccccc;">);
+        println!(</span><span style="color:#ffd700;">&quot;Turns out a lot! ==&gt; -/-&gt; &lt;!-- &lt;$&gt; &gt;&gt;=&quot;</span><span style="color:#cccccc;">);
+    }
+    </span><span style="color:#8aa6c1;">Ok</span><span style="color:#cccccc;">(</span><span style="color:#eddd5a;">42</span><span style="color:#cccccc;">)
+}
+</span></code></pre><h2 id="header-ii">Header II<a class="zola-anchor" href="#header-ii" aria-label="Anchor link for: header-ii">§</a>
+</h2>
+<p>Want block quotes? We got block quotes.</p>
+<p>Remember the wise words of Ras Kass:</p>
+<blockquote>
+<p>In Hotel Rwanda, reminder to honor these street scholars who ask why
+U.S. Defense is twenty percent of the tax dollar. Bush gave 6.46 billion to
+Halliburton for troops support efforts in Iraq; meanwhile, the hood is hurting,
+please believe that.</p>
+<p>-- &quot;Verses&quot;, <em>Wu-Tang Meets The Indie Culture</em></p>
+</blockquote>
+<h3 id="header-iii">Header III<a class="zola-anchor" href="#header-iii" aria-label="Anchor link for: header-iii">§</a>
+</h3>
+<table><thead><tr><th>members</th><th>age</th><th>notable album</th><th>to be messed with?</th></tr></thead><tbody>
+<tr><td>GZA</td><td>52</td><td>Liquid Swords</td><td>no</td></tr>
+<tr><td>ODB</td><td>35</td><td>Return to the 36 Chambers: The Dirty Version</td><td>absolutely not</td></tr>
+<tr><td>Raekwon Da Chef</td><td>49</td><td>Only Built 4 Cuban Linx...</td><td><code>&quot;no&quot;</code>  that's spanish for &quot;no&quot;</td></tr>
+<tr><td>Ghostface Killah</td><td>49</td><td>Fishscale</td><td>i swear you keep asking that question and the answer ain't gonna change</td></tr>
+<tr><td>Inspectah Deck</td><td>49</td><td>CZARFACE</td><td><code>protect ya neck, boy</code></td></tr>
+</tbody></table>
+<h4 id="header-iv">Header IV<a class="zola-anchor" href="#header-iv" aria-label="Anchor link for: header-iv">§</a>
+</h4>
+<p>Here's a video of my rabbit, Smalls, loaf'n to lofi beats:</p>
+<div >
+    <iframe src="https://www.youtube.com/embed/UUpuz8IObcs" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+
+        </div>
+        
+    
+</div></div>
+            
+    <div class="pagination">
+        <div class="pagination__buttons">
+            </div>
+    </div>
+<footer class="footer">
+                    <div class="footer__inner"><div class="copyright">
+            <span>© 2020 <a href="https://github.com/ejmg/zerm">zerm</a> :: Powered by <a href="https://www.getzola.org/">Zola</a></span>
+            <span>:: Theme made by <a href="https://github.com/ejmg">ejmg</a></span>
+        </div>
+    <script type="text/javascript" src="http:&#x2F;&#x2F;127.0.0.1:1111&#x2F;assets&#x2F;js&#x2F;main.js"></script>
+</div>
+                    
+
+                </footer></div>
+    <script src="/livereload.js?port=1024&amp;mindelay=10"></script></body>
+</html>

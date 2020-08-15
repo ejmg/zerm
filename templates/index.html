@@ -25,7 +25,7 @@
         {%- block og_preview -%}
             {{ social::og_preview() }}
         {%- endblock og_preview -%}
-        
+
         {%- block css -%}
             {{ head::styling() }}
         {%- endblock css -%}
@@ -37,7 +37,7 @@
         {%- block rss -%}
             {{ head::rss() }}
         {%- endblock rss -%}
-        
+
     </head>
     <body>
         {#
@@ -62,9 +62,9 @@
                     {{ lists::list_pages() }}
                 {%- endblock main -%}
             </div>
-            {#- 
+            {#-
             I keep pagination out of list, unlike Terminal, because I don't
-            like how the pagination buttons move with the width of the content 
+            like how the pagination buttons move with the width of the content
             div.
             -#}
             {%- block pagination -%}
@@ -74,10 +74,6 @@
             {%- block footer -%}
                 <footer class="footer">
                     <div class="footer__inner">
-                        {%- block copyright -%}
-                            {{ footer::copyright() }}
-                        {%- endblock copyright -%}
-
                         {%- block script -%}
                             {{ footer::script() }}
                         {%- endblock script -%}
