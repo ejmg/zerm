@@ -1,8 +1,14 @@
 {% macro extended_footer() %}
-      <a href="{{ get_url(path="/" ) }}/rss.xml">
-         <img src="{{ get_url(path="/" ) }}/rss.png" width="36" height="36" style="display:inline">
+      <a href="{{ get_url(path="/" ) }}/rss.xml" style="text-decoration:none">
+         <img src="{{ get_url(path="/" ) }}/rss.png" width="22" height="22" style="display:inline">
       </a>
-      <a href="https://github.com/PabloMansanet">
-         <img src="{{ get_url(path="/" ) }}/github.png" width="36" height="36" style="display:inline">
+      <a href="https://github.com/PabloMansanet" style="text-decoration:none">
+         <img src="{{ get_url(path="/" ) }}/github.png" width="22" height="22" style="display:inline">
+      </a>
+      <a href="mailto:cuervo@ecorax.net" style="text-decoration:none">
+         <img src="{{ get_url(path="/" ) }}/mail.png" width="22" height="22" style="display:inline">
+      </a>
+      <a href="https://www.reddit.com/user/cuerv0_/" style="text-decoration:none">
+         <img src="{{ get_url(path="/" ) }}/reddit.png" width="22" height="22" style="display:inline">
       </a>
 {% endmacro extended_footer %}
