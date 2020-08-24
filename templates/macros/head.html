@@ -26,7 +26,7 @@
 {% endmacro favicon %}
 
 {% macro rss() %}
-    {%- if config.generate_rss -%}
+    {%- if config.generate_feed -%}
         <link rel="alternate" type="application/rss+xml" title="{{ config.title }} RSS" href="{{ get_url(path="rss.xml") }}">
     {%- endif -%}
 {% endmacro rss %}

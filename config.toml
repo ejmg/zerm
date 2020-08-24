@@ -11,7 +11,8 @@ description = "placeholder description text for your blog!"
 default_language = "en"
 
 # Whether to generate a RSS feed automatically
-generate_rss = true
+generate_feed = true
+feed_filename = "rss.xml"
 
 # Theme name to use.
 # NOTE: should not need to mess with this if you are using zerm directly, i.e. cloning the
