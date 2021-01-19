@@ -1,7 +1,7 @@
 {% macro section_meta(section, author) %}
     <div class="post-meta">
         <span class="post-date">
-            
+
             {%- if section.extra["date"] -%}
                 {{ section.extra["date"] | date(format="%Y.%m.%d") }}
                 {# end of section.date if-check #}
@@ -10,7 +10,7 @@
 
         <span class="post-author">
             {%- if author -%}
-                {{ utils::author(section=section) }}
+                {{ utils::author(page=section) }}
             {%- endif -%}
         </span>
     </div>
@@ -44,7 +44,7 @@
             {{ posts::categories(categories=taxonomy.categories) }}
             {# end if-check for categories #}
         {%- endif -%}
-        
+
         {% if taxonomy.tags -%}
             {{ posts::tags(tags=taxonomy.tags) }}
             {# end if-check for tags #}
