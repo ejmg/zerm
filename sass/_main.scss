@@ -178,6 +178,7 @@ pre {
   overflow: auto;
   border-top: 1px solid rgba(255, 255, 255, .1);
   border-bottom: 1px solid rgba(255, 255, 255, .1);
+  direction: ltr;
 
   + pre {
     border-top: 0;
@@ -205,7 +206,7 @@ blockquote {
   padding: 25px;
 
   @media (max-width: $phone-max-width) {
-    padding-right: 0;
+    @include on-dir(padding-, right, left, 0);
   }
 
   &:before {
@@ -213,8 +214,9 @@ blockquote {
     font-family: Georgia, serif;
     font-size: 3.875rem;
     position: absolute;
-    left: -40px;
     top: -20px;
+
+    @include left-or-right(-40px);
   }
 
   p:first-of-type {
@@ -233,8 +235,9 @@ blockquote {
     content: '>';
     display: block;
     position: absolute;
-    left: -25px;
     color: var(--accent);
+
+    @include left-or-right(-25px);
   }
 }
 
@@ -255,8 +258,9 @@ th {
 }
 
 ul, ol {
-  margin-left: 30px;
   padding: 0;
+
+  @include on-dir-auto(margin-, 30px);
 
   li {
       position: relative;
@@ -265,7 +269,7 @@ ul, ol {
   }
 
   @media (max-width: $phone-max-width) {
-    margin-left: 20px;
+    @include on-dir-auto(margin-, 20px);
   }
 
   ul, ol {
@@ -284,7 +288,8 @@ ol ol {
   padding: 40px;
   max-width: 864px;
   min-height: 100vh;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+
+  @include on-dir-auto(border-, 1px solid rgba(255, 255, 255, 0.1));
 
   &.full,
   &.center {

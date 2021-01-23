@@ -1,0 +1,4 @@
+{#- TODO: use a variable for dir-based arrow when Keats/tera#573 closed -#}
+{#- TODO: maybe we could instead export namespaced variables? like arrow::next -#}
+{% macro prev() %}{% if config.extra.rtl %}→{% else %}←{%- endif -%}{%- endmacro prev -%}
+{% macro next() %}{% if config.extra.rtl %}←{% else %}→{%- endif -%}{%- endmacro next -%}

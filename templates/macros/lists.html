@@ -1,8 +1,10 @@
+{% import "macros/arrow.html" as arrow -%}
+
 {% macro list_pages() %}
 <section class="posts">
     
     {%- for page in paginator.pages -%}
-    
+
     <div class="post on-list">
         <header>
             <h1 class="post-title">
@@ -12,7 +14,7 @@
         
         
         {{ posts::meta(page=page, author=config.extra.show_author) }}
-        
+
         {#-                NOTE              -#}
         {#- --------------------------------  -#}
         {#- Skipping the Cover page implementation. Not included/covered for now. -#}
@@ -27,7 +29,7 @@
         </div>
         {% if page.description or page.summary -%}
         <div>
-            <a class="read-more button" href="{{ page.permalink }}">{{ config.extra.read_more }} →</a>
+            <a class="read-more button" href="{{ page.permalink }}">{{ config.extra.read_more }} {{ arrow::next() }}</a>
         </div>
         {% endif -%}
     </div>

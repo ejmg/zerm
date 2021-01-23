@@ -82,6 +82,9 @@ full_width = false
 # center theme with default width.
 center = false
 
+# whether layout is right-to-left or not
+rtl = false
+
 # set a custom favicon. Must be placed in root of static/ directory...
 # favicon = ""
 

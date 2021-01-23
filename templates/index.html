@@ -13,7 +13,7 @@
 {% import "macros/comments.html" as comments -%}
 
 <!DOCTYPE html>
-<html lang="{{ lang }}">
+<html lang="{{ lang }}"{% if config.extra.rtl %} dir="rtl"{% endif %}>
     <head>
         {%- block title -%}
             <title>{{ config.title }}</title>
