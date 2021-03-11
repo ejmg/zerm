@@ -31,6 +31,11 @@
     {%- endif -%}
 {% endmacro rss %}
 
+{% macro fonts() %}
+    <link rel="preload" href="/assets/fonts/FiraCode-Regular.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="/assets/fonts/FiraCode-Bold.woff" as="font" type="font/woff" crossorigin>
+{% endmacro fonts %}
+
 {% macro general_meta() %}
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
