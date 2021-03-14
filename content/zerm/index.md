@@ -2,6 +2,7 @@
 title="what is zerm?"
 description="a summary of what zerm is and why it is different."
 date=2019-08-07
+updated=2021-02-03
 
 [taxonomies]
 tags = ["rust", "test", "zola"]
