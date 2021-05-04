@@ -1,5 +1,5 @@
 {% macro list_pages() %}
-<div class="posts">
+<section class="posts">
     
     {%- for page in paginator.pages -%}
     
@@ -33,5 +33,5 @@
     {%- endfor -%}
     {#- I don't put pagination here like Terminal does. I don't like how
     the buttons move with the size of post entries in the content div. -#}
-</div>
+</section>
 {% endmacro list_pages %}
