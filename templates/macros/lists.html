@@ -4,9 +4,11 @@
     {%- for page in paginator.pages -%}
     
     <div class="post on-list">
-        <h1 class="post-title">
-            <a href="{{ page.permalink }}">{{ page.title }}</a>
-        </h1>
+        <header>
+            <h1 class="post-title">
+                <a href="{{ page.permalink }}">{{ page.title }}</a>
+            </h1>
+        </header>
         
         
         {{ posts::meta(page=page, author=config.extra.show_author) }}

@@ -8,9 +8,11 @@
 
 {%- block main -%}
 <div class="post">
-    <h1 class="post-title">
-        <a href="{{ section.permalink  }}">{{ section.title }}</a>
-    </h1>
+    <header>
+        <h1 class="post-title">
+            <a href="{{ section.permalink  }}">{{ section.title }}</a>
+        </h1>
+    </header>
     
     {{ posts::section_meta(section=section, author=config.extra.show_author) }}
 
