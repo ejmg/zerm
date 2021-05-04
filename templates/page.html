@@ -7,12 +7,12 @@
 {%- endblock title -%}
 
 {%- block main -%}
-    <div class="post">
         <h1 class="post-title">
             <a href="{{ page.permalink  }}">{{ page.title }}</a>
         </h1>
         {{ posts::meta(page=page, author=config.extra.show_author) }}
 
+    <article class="post">
 
         {#- Skipping logic for cover as was in original Terminal theme -#}
 
@@ -21,5 +21,5 @@
         </div>
         {# TODO: Decide if any sort of commenting functionality is desired? #}
     {#%- include "snippets/comments.html"  -%#}
-</div>
+    </article>
 {%- endblock main -%}
