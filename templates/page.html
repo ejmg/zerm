@@ -7,12 +7,13 @@
 {%- endblock title -%}
 
 {%- block main -%}
-        <h1 class="post-title">
-            <a href="{{ page.permalink  }}">{{ page.title }}</a>
-        </h1>
-        {{ posts::meta(page=page, author=config.extra.show_author) }}
-
     <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="{{ page.permalink  }}">{{ page.title }}</a>
+            </h1>
+            {{ posts::meta(page=page, author=config.extra.show_author) }}
+        </header>
 
         {#- Skipping logic for cover as was in original Terminal theme -#}
 
