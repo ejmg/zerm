@@ -63,6 +63,10 @@ show_tags = true
 # ["orange", "blue", "red", "green", "pink"]
 theme_color = "orange"
 
+# Whether or not to inline CSS in the generated HTML. Can provide
+# a performance improvement for some sites.
+inline_css = false
+
 # Custom css to style over the defaults. This is useful when you only have a
 # few small tweaks to make rather than a major rehaul to the theme.
 # It would be best to make this a proper .sass or .scss file in sass/ rather
