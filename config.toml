@@ -69,6 +69,9 @@ theme_color = "orange"
 # than placing in static/
 # custom_css = "custom.css"
 
+# Enable math inside articles with `math=true` property
+enable_katex = true
+
 # How many menu items to show on desktop. if you set this to 0, only submenu
 # button will be visible.
 show_menu_items = 2

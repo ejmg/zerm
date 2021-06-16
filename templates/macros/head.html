@@ -22,7 +22,7 @@
 {% macro favicon() %}
     {%- if config.extra.favicon is defined -%}
         <link rel="shortcut icon" href="{{ get_url(path=config.extra.favicon) }}" type="image/x-icon" />
-    {%- endif -%}    
+    {%- endif -%}
 {% endmacro favicon %}
 
 {% macro rss() %}
@@ -41,3 +41,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="description" content="{{ config.description }}"/>
 {% endmacro general_meta %}
+
+{% macro katex() %}
+  {% if config.extra.enable_katex %}
+  <link rel="stylesheet" href="{{ get_url(path="assets/katex/katex.min.css") }}">
+
+  <script defer type="text/javascript" src="{{ get_url(path="assets/katex/katex.min.js") | safe }}"></script>
+  <script defer type="text/javascript" src="{{ get_url(path="assets/katex/mathtex-script-type.min.js") | safe }}"></script>
+
+  <script defer src="{{ get_url(path="assets/katex/auto-render.min.js") | safe }}"
+    onload="renderMathInElement(document.body, {
+				delimiters: [
+					{left: '$$', right: '$$', display: true},
+					{left: '$', right: '$', display: false},
+					{left: '\\(', right: '\\)', display: false},
+					{left: '\\[', right: '\\]', display: true}
+				]
+			});"></script>
+  {% endif %}
+{% endmacro katek %}

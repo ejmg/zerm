@@ -1,4 +1,11 @@
+{% import "macros/head.html" as head -%}
 {% extends "index.html" -%}
+
+{%- block math -%}
+  {% if page.extra.math %}
+  {{ head::katex() }}
+  {% endif %}
+{%- endblock math -%}
 
 {%- block title %}
     <title>{{ page.title }} - {{  config.extra.author }}</title>

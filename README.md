@@ -1,19 +1,15 @@
 # zerm
 
-a minimalist and dark theme for [Zola](https://getzola.org).
+my personal **fork** of a minimalist and dark theme for [Zola](https://getzola.org).
 
 ![Screenshot](../master/zerm-preview.png?raw=true)
 
 [**Live Preview!**](https://zerm.ejmg.now.sh/)
 
 Largely a port of Radek Kozieł's [Terminal
-Theme](https://github.com/panr/hugo-theme-terminal) for Hugo. 4/5ths of my way
-through porting this theme, I discovered Paweł Romanowski own independent fork
-for Zola, [Terminimal](https://github.com/pawroman/zola-theme-terminimal),
-which helped me get the PostCSS to Sass styling conversion done more
-quickly. My sincerest thanks to both of you!
+Theme](https://github.com/panr/hugo-theme-terminal) for Hugo.
 
-## differences
+## differences from original theme
 
 This theme is largely true to the original by Radek, but there are some mild
 differences. They are almost all stylistic in nature and are intended to
@@ -26,6 +22,10 @@ emphasize minimalism even more. Some of them are as follows:
 
 Some of these might be added later and [PR's are always
 welcomed](https://github.com/ejmg/zerm/pulls).
+
+## differences from ejmg port
+
+- math typesetting support with KaTeX.
 
 ## configuration
 
