@@ -32,8 +32,8 @@
 {% endmacro rss %}
 
 {% macro fonts() %}
-    <link rel="preload" href="/assets/fonts/FiraCode-Regular.woff" as="font" type="font/woff" crossorigin>
-    <link rel="preload" href="/assets/fonts/FiraCode-Bold.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="{{ get_url(path="assets/fonts/FiraCode-Regular.woff") }}" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="{{ get_url(path="assets/fonts/FiraCode-Bold.woff") }}" as="font" type="font/woff" crossorigin>
 {% endmacro fonts %}
 
 {% macro general_meta() %}
