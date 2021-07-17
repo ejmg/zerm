@@ -12,7 +12,10 @@ default_language = "en"
 
 # Whether to generate a RSS feed automatically
 generate_feed = true
-feed_filename = "rss.xml"
+# 'atom.xml' (default if unspecified) and 'rss.xml' are officially supported
+# values for feed_filename in this theme. All other filenames will assume a
+# link type of 'application/rss+xml'.
+# feed_filename = "atom.xml"
 
 # Theme name to use.
 # NOTE: should not need to mess with this if you are using zerm directly, i.e. cloning the
