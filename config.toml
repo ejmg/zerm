@@ -104,6 +104,7 @@ logo_home_link = "/"
 main_menu = [
               {url="/about/", name="about"},
               {url="/contact/", name="contact"},
+              {url="https://google.com", name="Google", external=true},
 ]
 
 # Displayed as title of drop-down menu when size of main_menu > show_menu_items.
