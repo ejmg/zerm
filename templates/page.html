@@ -17,7 +17,9 @@
 
         {#- Skipping logic for cover as was in original Terminal theme -#}
 
-            {{ page.content | safe }}
+        {{ page.content | safe }}
+
+        {{ comments::comments() }}
         {# TODO: Decide if any sort of commenting functionality is desired? #}
         {#%- include "snippets/comments.html"  -%#}
     </article>
