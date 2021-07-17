@@ -26,7 +26,7 @@
     {%- endif -%}
 {% endmacro og_description %}
 
-{% macro og_title() %}
+{% macro og_title() -%}
     {{ config.title }} -&nbsp;
     {%- if section -%}
         {%- if section.title -%}
