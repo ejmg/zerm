@@ -7,19 +7,18 @@
 {%- endblock title -%}
 
 {%- block main -%}
-<div class="post">
-    <h1 class="post-title">
-        <a href="{{ section.permalink  }}">{{ section.title }}</a>
-    </h1>
-    
-    {{ posts::section_meta(section=section, author=config.extra.show_author) }}
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="{{ section.permalink  }}">{{ section.title }}</a>
+            </h1>
+            {{ posts::section_meta(section=section, author=config.extra.show_author) }}
+        </header>
 
-    {#- Skipping logic for cover as was in original Terminal theme -#}
+        {#- Skipping logic for cover as was in original Terminal theme -#}
 
-    <div class="post-content">
-        {{ section.content | safe }}
-    </div>
-    {# TODO: Decide if any sort of commenting functionality is desired? #}
-    {#%- include "snippets/comments.html"  -%#}
-</div>
+            {{ section.content | safe }}
+        {# TODO: Decide if any sort of commenting functionality is desired? #}
+        {#%- include "snippets/comments.html"  -%#}
+    </article>
 {%- endblock main -%}
