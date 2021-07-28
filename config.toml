@@ -65,6 +65,10 @@ theme_color = "orange"
 
 # Whether or not to inline CSS in the generated HTML. Can provide
 # a performance improvement for some sites.
+# This is useful for sites where often only one page is visited by a user.
+# In such a case, separately loading/caching the CSS provides no extra 
+# benefit, and slows down content rendering while waiting the CSS network 
+# request to start and finish.
 inline_css = false
 
 # Custom css to style over the defaults. This is useful when you only have a
