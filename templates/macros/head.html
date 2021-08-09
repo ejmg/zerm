@@ -7,8 +7,8 @@
     -#}
     
 {% macro fonts() %}
-    <link rel="preload" href="{{ get_url(path="/assets/fonts/FiraCode-Regular.woff2") }}" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ get_url(path="/assets/fonts/FiraCode-Bold.woff2") }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ get_url(path="/assets/fonts/FiraCode-Regular.woff2") }}" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="{{ get_url(path="/assets/fonts/FiraCode-Bold.woff2") }}" as="font" type="font/woff2" crossorigin="anonymous">
 {% endmacro fonts %}
 
 {% macro styling() %}
