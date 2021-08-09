@@ -1,10 +1,15 @@
 {#- TODO:
-- [x] add rss
-- [x] favicons
-- [x] media preview
-- [ ] twitter
-- [ ] maybe google adsense
--#}
+    - [x] add rss
+    - [x] favicons
+    - [x] media preview
+    - [ ] twitter
+    - [ ] maybe google adsense
+    -#}
+    
+{% macro fonts() %}
+    <link rel="preload" href="{{ get_url(path="/assets/fonts/FiraCode-Regular.woff2") }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ get_url(path="/assets/fonts/FiraCode-Bold.woff2") }}" as="font" type="font/woff2" crossorigin>
+{% endmacro fonts %}
 
 {% macro styling() %}
     <link rel="stylesheet" href="{{ get_url(path="style.css", cachebust=true) }}">
@@ -30,11 +35,6 @@
         <link rel="alternate" type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="{{ config.title }} RSS" href="{{ get_url(path=config.feed_filename) }}">
     {%- endif -%}
 {% endmacro rss %}
-
-{% macro fonts() %}
-    <link rel="preload" href="/assets/fonts/FiraCode-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/assets/fonts/FiraCode-Bold.woff2" as="font" type="font/woff2" crossorigin>
-{% endmacro fonts %}
 
 {% macro general_meta() %}
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
