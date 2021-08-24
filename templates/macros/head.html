@@ -43,7 +43,6 @@
 {% endmacro general_meta %}
 
 {% macro katex() %}
-  {% if config.extra.enable_katex %}
   <link rel="stylesheet" href="{{ get_url(path="assets/katex/katex.min.css") }}">
 
   <script defer type="text/javascript" src="{{ get_url(path="assets/katex/katex.min.js") | safe }}"></script>
@@ -58,5 +57,4 @@
 					{left: '\\[', right: '\\]', display: true}
 				]
 			});"></script>
-  {% endif %}
 {% endmacro katek %}
