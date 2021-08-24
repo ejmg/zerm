@@ -40,7 +40,7 @@ You can use KaTeX for mathematical typesetting.
 Assets are only available if you opt-in on a per-page level through
 a single line (`math=true`) on the extra section of the page frontmatter.
 
-``` toml
+``` md
 # index.md
 +++
 title="this page title"
