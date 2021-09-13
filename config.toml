@@ -112,3 +112,7 @@ read_more = "read more"
 # not currently used from previous theme, but leaving here for now in case I
 # feel like adding it.
 read_other_posts = "read other posts"
+
+# Enable math typesetting with KaTeX
+# Show math in pages with `math=true` in the TOML frontmatter
+enable_katex = true
