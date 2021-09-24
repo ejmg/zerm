@@ -13,7 +13,7 @@
                     Original theme has sub-children checks on main-menu, not worrying about that here.
                     #}
                     <li>
-                        <a href="{{ get_url(path=menu_item.url) }}">{{ menu_item.name }}</a>
+                        <a href="{{ menu::get_link(item=menu_item) }}">{{ menu_item.name }}</a>
                     </li>
                 {% endfor -%}
 
@@ -44,7 +44,15 @@
     {%- for menu_item in menu -%}
         {# skipping sub-child check #}
         <li>
-            <a href="{{ get_url(path=menu_item.url) }}">{{ menu_item.name }}</a>
+            <a href="{{ menu::get_link(item=menu_item) }}">{{ menu_item.name }}</a>
         </li>
     {%- endfor-%}
 {% endmacro items %}
+
+{% macro get_link(item) %}
+    {% if item.external is defined and item.external == true %}
+        {{ item.url }}
+    {% else %}
+        {{ get_url(path=item.url) }}
+    {% endif %}
+{% endmacro menuitem %}

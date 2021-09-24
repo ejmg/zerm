@@ -3,33 +3,6 @@
 .pagination {
   margin-top: 50px;
 
-  &__title {
-    display: flex;
-    text-align: center;
-    position: relative;
-    margin: 100px 0 20px;
-
-    &-h {
-      text-align: center;
-      margin: 0 auto;
-      padding: 5px 10px;
-      background: var(--background);
-      font-size: .8rem;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      z-index: 1;
-    }
-
-    hr {
-      position: absolute;
-      left: 0;
-      right: 0;
-      width: 100%;
-      margin-top: 15px;
-      z-index: 0;
-    }
-  }
-
   &__buttons {
     display: flex;
     align-items: center;
