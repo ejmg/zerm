@@ -1,12 +1,14 @@
 {% macro list_pages() %}
-<div class="posts">
+<section class="posts">
     
     {%- for page in paginator.pages -%}
     
     <div class="post on-list">
-        <h1 class="post-title">
-            <a href="{{ page.permalink }}">{{ page.title }}</a>
-        </h1>
+        <header>
+            <h1 class="post-title">
+                <a href="{{ page.permalink }}">{{ page.title }}</a>
+            </h1>
+        </header>
         
         
         {{ posts::meta(page=page, author=config.extra.show_author) }}
@@ -19,9 +21,11 @@
             {%  if page.description -%}
             {{ page.description }}
             {#- end if-check for description -#}
+            {%  elif page.summary -%}
+            {{ page.summary | safe }}
             {%  endif -%}
         </div>
-        {% if page.description -%}
+        {% if page.description or page.summary -%}
         <div>
             <a class="read-more button" href="{{ page.permalink }}">{{ config.extra.read_more }} →</a>
         </div>
@@ -31,5 +35,5 @@
     {%- endfor -%}
     {#- I don't put pagination here like Terminal does. I don't like how
     the buttons move with the size of post entries in the content div. -#}
-</div>
+</section>
 {% endmacro list_pages %}

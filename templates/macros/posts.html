@@ -23,6 +23,11 @@
                 {{ page.date | date(format="%Y.%m.%d") }}
                 {# end of page.date if-check #}
             {%- endif -%}
+
+            {%- if page.updated -%}
+                [Updated: {{ page.updated | date(format="%Y.%m.%d") }}]
+                {# end of page.updated if-check #}
+            {%- endif -%}
         </span>
 
         <span class="post-author">
