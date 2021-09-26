@@ -26,7 +26,7 @@
         {%- block og_preview -%}
             {{ social::og_preview() }}
         {%- endblock og_preview -%}
-        
+
         {%- block fonts -%}
             {{ head::fonts() }}
         {%- endblock fonts -%}
@@ -42,7 +42,9 @@
         {%- block rss -%}
             {{ head::rss() }}
         {%- endblock rss -%}
-        
+
+        {%- block math -%}
+        {%- endblock math -%}
     </head>
     <body>
         {#
@@ -67,9 +69,9 @@
                     {{ lists::list_pages() }}
                 {%- endblock main -%}
             </div>
-            {#- 
+            {#-
             I keep pagination out of list, unlike Terminal, because I don't
-            like how the pagination buttons move with the width of the content 
+            like how the pagination buttons move with the width of the content
             div.
             -#}
             {%- block pagination -%}
