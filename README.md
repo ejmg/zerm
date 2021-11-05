@@ -59,3 +59,9 @@ to worry about any performance hit.
 ## license
 
 MIT. See `LICENSE.md` for more details.
+
+
+
+ // credits to major contributors
+//  enumerating all features
+//  explicit documentation for more complicated/niche features
