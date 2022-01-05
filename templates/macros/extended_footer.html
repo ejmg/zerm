@@ -1,14 +1,25 @@
 {% macro extended_footer() %}
-      <a href="{{ get_url(path="/" ) }}/rss.xml" style="text-decoration:none">
-         <img src="{{ get_url(path="/" ) }}/rss.png" width="22" height="22" style="display:inline">
+      {%- if config.generate_feed and config.extra.show_rss_badge -%}
+      <a href="{{ get_url(path=config.feed_filename) }}" style="text-decoration:none">
+         <img src="{{ get_url(path="/assets/social/rss.png" ) }}" width="22" height="22" style="display:inline">
       </a>
-      <a href="https://github.com/PabloMansanet" style="text-decoration:none">
-         <img src="{{ get_url(path="/" ) }}/github.png" width="22" height="22" style="display:inline">
+      {%- endif -%}
+
+      {%- if config.extra.github_profile -%}
+         <a href="{{ config.extra.github_profile}}" style="text-decoration:none">
+            <img src="{{ get_url(path="/assets/social/github.png" ) }}" width="22" height="22" style="display:inline">
+         </a>
+      {%- endif -%}
+
+      {%- if config.extra.email -%}
+      <a href="{{ config.extra.email}}" style="text-decoration:none">
+         <img src="{{ get_url(path="/assets/social/mail.png" ) }}" width="22" height="22" style="display:inline">
       </a>
-      <a href="mailto:cuervo@ecorax.net" style="text-decoration:none">
-         <img src="{{ get_url(path="/" ) }}/mail.png" width="22" height="22" style="display:inline">
+      {%- endif -%}
+
+      {%- if config.extra.reddit_profile -%}
+      <a href="{{ config.extra.reddit_profile}}" style="text-decoration:none">
+         <img src="{{ get_url(path="/assets/social/reddit.png" ) }}" width="22" height="22" style="display:inline">
       </a>
-      <a href="https://www.reddit.com/user/cuerv0_/" style="text-decoration:none">
-         <img src="{{ get_url(path="/" ) }}/reddit.png" width="22" height="22" style="display:inline">
-      </a>
+      {%- endif -%}
 {% endmacro extended_footer %}

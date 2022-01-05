@@ -117,6 +117,13 @@ read_more = "read more"
 # feel like adding it.
 read_other_posts = "read other posts"
 
+# Socials bar
+# github_profile = "https://github.com/"
+# email = ""
+# reddit_profile = ""
+
+# to enable, you should also enable generate_feed
+show_rss_badge = false 
 
 # Enable math typesetting with KaTeX
 # Show math in pages with `math=true` in the TOML frontmatter
