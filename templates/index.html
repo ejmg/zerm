@@ -10,9 +10,10 @@
 {% import "macros/pagination.html" as pagination -%}
 {% import "macros/footer.html" as footer -%}
 {% import "macros/extended_footer.html" as extended_footer -%}
+{% import "macros/comments.html" as comments -%}
 
 <!DOCTYPE html>
-<html lang="{{ config.default_language }}">
+<html lang="{{ lang }}">
     <head>
         {%- block title -%}
             <title>{{ config.title }}</title>
@@ -26,6 +27,10 @@
             {{ social::og_preview() }}
         {%- endblock og_preview -%}
 
+        {%- block fonts -%}
+            {{ head::fonts() }}
+        {%- endblock fonts -%}
+
         {%- block css -%}
             {{ head::styling() }}
         {%- endblock css -%}
@@ -38,6 +43,8 @@
             {{ head::rss() }}
         {%- endblock rss -%}
 
+        {%- block math -%}
+        {%- endblock math -%}
     </head>
     <body>
         {#

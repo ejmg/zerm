@@ -3,7 +3,7 @@
         <span class="post-date">
             
             {%- if section.extra["date"] -%}
-                {{ section.extra["date"]["$__toml_private_datetime"] | date(format="%Y.%m.%d") }}
+                {{ section.extra["date"] | date(format="%Y.%m.%d") }}
                 {# end of section.date if-check #}
             {%- endif -%}
         </span>
@@ -23,6 +23,11 @@
                 {{ page.date | date(format="%Y.%m.%d") }}
                 {# end of page.date if-check #}
             {%- endif -%}
+
+            {%- if page.updated -%}
+                [Updated: {{ page.updated | date(format="%Y.%m.%d") }}]
+                {# end of page.updated if-check #}
+            {%- endif -%}
         </span>
 
         <span class="post-author">
@@ -35,7 +40,7 @@
             disp_cat=config.extra.show_categories,
             disp_tag=config.extra.show_tags) }}
     </div>
-{% endmacro section_meta %}
+{% endmacro meta %}
 
 {% macro taxonomies(taxonomy, disp_cat, disp_tag) %}
 
