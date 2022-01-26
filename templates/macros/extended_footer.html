@@ -28,6 +28,12 @@
       </a>
       {%- endif -%}
 
+      {%- if config.extra.twitter -%}
+      <a href="{{ config.extra.twitter}}" style="text-decoration:none">
+         <img class="socials" src="{{ get_url(path="/assets/social/twitter.png" ) }}" width="22" height="22" style="display:inline" alt="Twitter Badge">
+      </a>
+      {%- endif -%}
+
       {%- if config.extra.reddit_profile -%}
       <a href="{{ config.extra.reddit_profile}}" style="text-decoration:none">
          {%- set reddit_image =  resize_image(path="/assets/social/reddit.png", width=22, height=22, op="scale", format="png") -%}
