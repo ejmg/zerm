@@ -13,13 +13,12 @@
                     :: <a href="{{ post.permalink }}">{{ post.title }}</a>
                     :: {{ "{" }}
                     {%- for cat in post.taxonomies["categories"] -%}
+                        {%- set _cat = get_taxonomy_url(kind="categories", name=cat) -%}
                         {%- if loop.last -%}
-                            <a href="{%- set _cat = get_taxonomy_url(kind="categories", name=cat) -%}{{ _cat }}">{{ cat }}</a>
-                        {%- elif loop.first -%}
-                                <a href="{%- set _cat = get_taxonomy_url(kind="categories", name=cat) -%}{{ _cat }}">{{ cat }}</a>,&nbsp;
+                            <a href="{{ _cat }}">{{ cat }}</a>
                         {%- else -%}
-                            <a href="{%- set _cat = get_taxonomy_url(kind="categories", name=cat) -%}{{ _cat }}">{{ cat }}</a>,
-                            {%- endif -%}
+                            <a href="{{ _cat }}">{{ cat }}</a>,&nbsp;
+                        {%- endif -%}
                     {% endfor %}{{ "}" }}
                 </li>
                 {# End of pagination for-loop #}
