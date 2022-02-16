@@ -1,7 +1,9 @@
 {% macro og_preview() %}
     <meta property="og:title" content="{{ social::og_title() }}" />
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content="{{ current_url }}"/>
+    {%- if current_url -%}
+        <meta property="og:url" content="{{ current_url }}"/>
+    {%- endif -%}
     <meta property="og:description" content="{{ social::og_description() }}"/>
     {%- if config.extra.og_preview_img -%}
         <meta property="og:image" content="{{ get_url(path=config.extra.og_preview_img) }}"/>

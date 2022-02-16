@@ -1,0 +1,12 @@
+{% extends "index.html" -%}
+
+{%- block title %}
+    <title>Page not found</title>
+{%- endblock title -%}
+
+{%- block main -%}
+
+Sorry, this page doesn't exist.
+
+Go back&nbsp<a href="{%- if config.extra.logo_home_link -%}{{ config.extra.logo_home_link }}{%- else -%}{{ config.base_url }}{%- endif -%}">home?</a>
+{%- endblock main -%}
