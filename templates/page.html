@@ -1,4 +1,5 @@
 {% import "macros/head.html" as head -%}
+{% import "macros/toc.html" as toc -%}
 {% extends "index.html" -%}
 
 {%- block math -%}
@@ -20,6 +21,12 @@
                 <a href="{{ page.permalink  }}">{{ page.title }}</a>
             </h1>
             {{ posts::meta(page=page, author=config.extra.show_author) }}
+
+            {%- block ToC -%}
+                {%- if page.toc and page.extra.generate_toc or config.extra.generate_toc -%}
+                    {{ toc::toc(t=page.toc) }}
+                {%- endif -%}
+            {%- endblock ToC -%}
         </header>
 
         {#- Skipping logic for cover as was in original Terminal theme -#}
