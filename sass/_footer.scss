@@ -64,4 +64,15 @@
   //     font-size: 0.75rem;
   //   }
   // }
+
+  .extended_footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 5px;
+
+    img {
+      margin: 5px;
+    }
+  }
 }

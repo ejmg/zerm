@@ -1,2 +1,38 @@
 {% macro extended_footer() %}
+   <div class="extended_footer">
+      {%- if config.generate_feed and config.extra.show_rss_badge -%}
+      <a href="{{ get_url(path=config.feed_filename) }}" style="text-decoration:none">
+         {%- set rss_image =  resize_image(path="/assets/social/rss.png", width=22, height=22, op="scale", format="png") -%}
+         <img src="{{ rss_image.url }}" style="display:inline" alt="RSS Badge" />
+      </a>
+      {%- endif -%}
+
+      {%- if config.extra.github_profile -%}
+      <a href="{{ config.extra.github_profile}}" style="text-decoration:none">
+         {%- set gh_image =  resize_image(path="/assets/social/github.png", width=22, height=22, op="scale", format="png") -%}
+         <img src="{{ gh_image.url }}" style="display:inline" alt="Github Profile Badge" />
+      </a>
+      {%- endif -%}
+
+      {%- if config.extra.email -%}
+      <a href="{{ config.extra.email}}" style="text-decoration:none">
+         {%- set email_image =  resize_image(path="/assets/social/mail.png", width=22, height=22, op="scale", format="png") -%}
+         <img src="{{ email_image.url }}" style="display:inline" alt="Email Badge" />
+      </a>
+      {%- endif -%}
+
+      {%- if config.extra.twitter -%}
+      <a href="{{ config.extra.twitter}}" style="text-decoration:none">
+         {%- set twitter_image =  resize_image(path="/assets/social/twitter.png", width=22, height=22, op="scale", format="png") -%}
+         <img src="{{ twitter_image.url }}" style="display:inline" alt="Twitter Badge" />
+      </a>
+      {%- endif -%}
+
+      {%- if config.extra.reddit_profile -%}
+      <a href="{{ config.extra.reddit_profile}}" style="text-decoration:none">
+         {%- set reddit_image =  resize_image(path="/assets/social/reddit.png", width=22, height=22, op="scale", format="png") -%}
+         <img src="{{ reddit_image.url }}" style="display:inline" alt="Reddit Badge" />
+      </a>
+      {%- endif -%}
+   </div>
 {% endmacro extended_footer %}
