@@ -23,7 +23,7 @@
             {{ posts::meta(page=page, author=config.extra.show_author) }}
 
             {%- block ToC -%}
-                {%- if page.extra.generate_toc or config.extra.generate_toc -%}
+                {%- if page.extra.ToC or config.extra.ToC -%}
                     {{ toc::toc(t=page.toc) }}
                 {%- endif -%}
             {%- endblock ToC -%}

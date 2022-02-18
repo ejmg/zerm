@@ -9,7 +9,7 @@ tags = ["rust", "test", "zola"]
 categories = ["programming", "misc.",]
 
 [extra]
-generate_toc = true
+ToC = true
 +++
 
 # hello
