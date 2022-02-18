@@ -1,7 +1,7 @@
 {% macro toc (t) %}
+{% if t %}
 <div class="toc" id="nav-container">
 	<p class="toc-head">Table of Contents</p>
-	{% if t %}
 		<div id="nav-content" >
 		<ul>
 		{% for h1 in page.toc %}
@@ -56,6 +56,6 @@
 		{% endfor %}
 		</ul>
 		</div>
-	{% endif %}
 </div>
+{% endif %}
 {% endmacro %}
