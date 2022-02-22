@@ -6,3 +6,11 @@
   --color: whitesmoke;
   --border-color: rgba(255, 255, 255, .1);
 }
+
+footer {
+  .extended_footer {
+    img {
+      filter: invert(76%) sepia(96%) saturate(2421%) hue-rotate(314deg) brightness(106%) contrast(101%);
+    }
+  }
+}

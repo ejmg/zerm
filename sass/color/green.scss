@@ -9,3 +9,11 @@
   --color: whitesmoke;
   --border-color: rgba(255, 255, 255, .1);
 }
+
+footer {
+  .extended_footer {
+    img {
+      filter: invert(95%) sepia(90%) saturate(3116%) hue-rotate(46deg) brightness(96%) contrast(106%);
+    }
+  }
+}
