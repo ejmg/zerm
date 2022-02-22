@@ -39,7 +39,29 @@
 {% macro general_meta() %}
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <meta name="description" content="{{ config.description }}"/>
+    {%- if page.title -%}
+        <meta name="description" content="{{ config.description }} {{ page.title }} {{ page.description }}"/>
+    {%- else -%}
+        <meta name="description" content="{{ config.description }}"/>
+    {%- endif -%}
+
+    {%- if page.taxonomies.tags or page.taxonomies.categories -%}
+        <meta name="keywords" content="
+        {%- if page.taxonomies.categories -%}
+            {%- for cat in page.taxonomies.categories -%}
+                    {{ cat }}, {% endfor -%}
+        {%- endif -%}
+
+        {%- if page.taxonomies.tags -%}
+            {%- for tag in page.taxonomies.tags -%}
+                {%- if loop.last -%}
+                    {{ tag }}
+                {%- else -%}
+                    {{ tag }}, {% endif -%}
+            {%- endfor -%}
+        {%- endif -%}
+        " />
+    {%- endif -%}
 {% endmacro general_meta %}
 
 {% macro katex() %}
