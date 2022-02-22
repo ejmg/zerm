@@ -9,6 +9,7 @@ tags = ["rust", "test", "zola"]
 categories = ["programming", "misc.",]
 
 [extra]
+ToC = true
 +++
 
 # hello

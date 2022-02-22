@@ -1,0 +1,61 @@
+{% macro toc (t) %}
+{% if t %}
+<div class="toc" id="nav-container">
+	<p class="toc-head">Table of Contents</p>
+		<div id="nav-content" >
+		<ul>
+		{% for h1 in page.toc %}
+			<li>
+				<a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+				{% if h1.children %}
+					<ul>
+						{% for h2 in h1.children %}
+							<li>
+								<a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+							</li>
+							{% if h2.children %}
+								<ul>
+								{% for h3 in h2.children %}
+									<li>
+										<a href="{{ h3.permalink | safe }}">{{ h3.title }}</a>
+										{% if h3.children %}
+											<ul>
+												{% for h4 in h3.children %}
+													<li>
+														<a href="{{ h4.permalink | safe }}">{{ h4.title }}</a>
+													</li>
+													{% if h4.children %}
+														<ul>
+															{% for h5 in h4.children %}
+																<li>
+																	<a href="{{ h5.permalink | safe }}">{{ h5.title }}</a>
+																	{% if h5.children %}
+																		<ul>
+																		{% for h6 in h5.children %}
+																			<li>
+																				<a href="{{ h5.permalink | safe }}">{{ h6.title }}</a>
+																			</li>
+																		{% endfor %}
+																		</ul>
+																	{% endif %}
+																</li>
+															{% endfor %}
+														</ul>
+													{% endif %}
+												{% endfor %}
+											</ul>
+										{% endif %}
+									</li>
+								{% endfor %}
+								</ul>
+							{% endif %}
+						{% endfor %}
+					</ul>
+				{% endif %}
+			</li>
+		{% endfor %}
+		</ul>
+		</div>
+</div>
+{% endif %}
+{% endmacro %}

@@ -1,0 +1,6 @@
+div.toc {
+	--shadow-color: var(--accent-alpha-70);
+    --shadow: 10px 10px var(--shadow-color);
+	@include menu;	
+	margin: 20px 0;
+}

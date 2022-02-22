@@ -1,7 +1,6 @@
 @import "variables";
 
 @mixin menu {
-  position: absolute;
   background: var(--background);
   box-shadow: var(--shadow);
   color: var(--color);
@@ -49,6 +48,7 @@
 
     @media (max-width: $phone-max-width) {
         @include menu;
+        position: absolute;
         top: 50px;
         right: 0;
     }

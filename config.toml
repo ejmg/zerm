@@ -124,3 +124,8 @@ enable_katex = true
 
 # Options for disqus
 disqus = { enabled=false, short_name="" }
+
+# generate Table of Contents for all articles
+# Table of Contents can be generated for individual articles
+# by adding `ToC = true` in [extra] section in frontmatter
+# ToC = true
