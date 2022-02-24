@@ -5,9 +5,20 @@
         <meta property="og:url" content="{{ current_url }}"/>
     {%- endif -%}
     <meta property="og:description" content="{{ social::og_description() }}"/>
-    {%- if config.extra.og_preview_img -%}
+
+    {%- if section -%}
+        {%- if config.extra.og_preview_img -%}
         <meta property="og:image" content="{{ get_url(path=config.extra.og_preview_img) }}"/>
-    {%- endif -%}
+        {%- endif -%}
+
+    {%- elif page -%}
+        {%- if page.extra.og_image -%}
+        <meta property="og:image" content="{{ current_url ~ page.extra.og_image | trim }}"/>
+        {%- elif config.extra.og_preview_img -%}
+        <meta property="og:image" content="{{ get_url(path=config.extra.og_preview_img) }}"/>
+        {%- endif -%}
+    {%- endif -%}{# ./if section #}
+
 {% endmacro og_preview %}
 
 {% macro og_description() %}
