@@ -21,6 +21,7 @@
                 <a href="{{ page.permalink  }}">{{ page.title }}</a>
             </h1>
             {{ posts::meta(page=page, author=config.extra.show_author) }}
+            {{ posts::langs(page=page) }}
 
             {%- block ToC -%}
                 {%- if page.extra.ToC or config.extra.ToC -%}
