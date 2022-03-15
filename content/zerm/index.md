@@ -64,4 +64,6 @@ Like zerm? Then [install
 Zola](https://www.getzola.org/documentation/getting-started/installation/) and
 [get started](https://www.getzola.org/documentation/themes/installing-and-using-themes/#installing-a-theme)!
 
+---
+
 [^1]: fork? port? a little bit of the former, more of the latter?
