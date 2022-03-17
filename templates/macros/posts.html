@@ -16,6 +16,17 @@
     </div>
 {% endmacro section_meta %}
 
+{% macro langs(page) %}
+    {% if page.translations | length > 1 %}
+    <div class="post-langs" style="opacity: .5;">
+      <span>Translations: </span>{# TODO translate the span content too #}
+      {% for translated in page.translations %}
+      <a href="{{ translated.permalink }}">{{ translated.lang }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+{% endmacro langs %}
+
 {% macro meta(page, author) %}
     <div class="post-meta">
         <span class="post-date">
