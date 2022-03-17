@@ -104,3 +104,11 @@
     }
 }
 
+.footnote-definition {
+  color: var(--accent);
+
+  p {
+    display: inline;
+    color: var(--footnote-color);
+  }
+}
