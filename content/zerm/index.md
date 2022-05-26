@@ -47,6 +47,27 @@ fn main(n: String) {
 }
 ```
 
+here's a code block with long lines. does it handle well with horizontal scroll?
+
+```rs
+struct EgregiouslyLongExampleType {
+    wow_these_are_some_really_long_field_names_you_probably_shouldnt_use_in_code: f64,
+    like_really_dont_write_code_like_this_its_making_me_sad: String,
+}
+
+type Config = Option<String>; // lol you should use proper types
+
+/// I'm being serious, please do not write code like this
+impl FooBarBuzzBaz for EgregiouslyLongExampleType {
+    fn stupidly_long_method_name(abstract_model_factory_generator_tuple_singleton_config: Config) -> Result<(), String> {
+        match abstract_model_factory_generator_tuple_singleton_config {
+            Some(cfg) => Ok(()),
+            None => Err(String::from("lol what is an error type lol"))
+        }
+    }
+}
+```
+
 ### Header III
 
 > a somewhat kinda maybe large quote that maybe spans
