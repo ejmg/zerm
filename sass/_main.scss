@@ -195,6 +195,24 @@ pre {
       padding: 0;
       font-size: inherit;
       border: none;
+
+      table {
+        table-layout: auto;
+        border-collapse: collapse;
+        box-sizing: border-box;
+        width: 100%;
+        margin: 00px 0;
+      }
+
+      table, th, td {
+        border: none;
+        padding: 0px;
+      }
+
+      table tr td:first-child {
+        padding-right: 10px;
+      }
+
   }
 }
 
