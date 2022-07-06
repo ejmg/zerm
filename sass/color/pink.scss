@@ -7,3 +7,11 @@
   --border-color: rgba(255, 255, 255, .1);
   --footnote-color: rgba(255, 255, 255, .5);
 }
+
+footer {
+  .extended_footer {
+    img {
+      filter: invert(68%) sepia(83%) saturate(2956%) hue-rotate(261deg) brightness(105%) contrast(89%);
+    }
+  }
+}

@@ -32,10 +32,8 @@
     // As a substitute, I'm going to use the alpha-70 version of accent.
     color: var(--accent-alpha-70);
 
-    &--user {
-      margin: auto;
-      text-align: center;
-    }
+    margin: auto;
+    text-align: center;
 
     & > *:first-child:not(:only-child) {
       margin-right: 10px;
@@ -64,4 +62,15 @@
   //     font-size: 0.75rem;
   //   }
   // }
+
+  .extended_footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 5px;
+
+    img {
+      margin: 5px;
+    }
+  }
 }
