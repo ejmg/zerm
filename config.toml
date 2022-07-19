@@ -129,3 +129,10 @@ disqus = { enabled=false, short_name="" }
 # Table of Contents can be generated for individual articles
 # by adding `ToC = true` in [extra] section in frontmatter
 # ToC = true
+
+# Twitter metadata
+# the website used in the card footer
+# twitter_site="@username_website"
+# for the actual author of the page
+# (it can be overwrited specifying a custom `twitter_user` in [extra] in frontmatter)
+# twitter_user="@username_user"
