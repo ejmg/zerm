@@ -19,6 +19,9 @@
     {%- else -%}
         <link rel="stylesheet" href=" {{ get_url(path="color/orange.css", cachebust=true) }}">
     {% endif %}
+    {%- if config.extra.font_awesome is defined -%}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/{{ config.extra.font_awesome }}/css/all.min.css">
+    {% endif %}
     {%- if config.extra.custom_css is defined -%}
         <link rel="stylesheet" href="{{ get_url(path="custom.css", cachebust=true) }}">
     {% endif %}
