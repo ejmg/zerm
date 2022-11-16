@@ -1,0 +1,6 @@
+@import 'variables';
+
+:root {
+  --phoneWidth: (max-width: #{$phone-max-width + 1px});
+  --tabletWidth: (max-width: #{$tablet-max-width + 1px});
+}

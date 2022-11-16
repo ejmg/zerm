@@ -1,10 +1,12 @@
+{% import "macros/arrow.html" as arrow -%}
+
 {% macro paginate() %}
     <div class="pagination">
         <div class="pagination__buttons">
             {% if paginator.previous -%}
                 <span class="button previous">
                     <a href="{{ paginator.previous }}">
-                        <span class="button__icon">←</span>
+                        <span class="button__icon">{{ arrow::prev() }}</span>
                         <span class="button__text">newer</span>
                     </a>
                 </span>
@@ -15,7 +17,7 @@
                 <span class="button next">
                     <a href="{{ paginator.next }}">
                         <span class="button__text">older</span>
-                        <span class="button__icon">→</span>
+                        <span class="button__icon">{{ arrow::next() }}</span>
                     </a>
                 </span>
             {% endif-%}

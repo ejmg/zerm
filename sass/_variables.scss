@@ -1,9 +1,30 @@
-:root {
-  // *NOTE*:
-  // ------------------------------------------------
-  //Keep the same as the values in variables.scss!!!!!
-  --phoneWidth: (max-width: 684px);
-  --tabletWidth: (max-width: 900px);
+@mixin if-rtl {
+  @at-root :root[dir=rtl] & {
+    @content;
+  }
+}
+
+@mixin if-not-rtl {
+  @at-root :root:not([dir=rtl]) & {
+    @content;
+  }
+}
+
+@mixin on-dir($prop, $ltr, $rtl, $value) {
+  @include if-rtl {
+    #{$prop}#{$rtl}: $value;
+  }
+  @include if-not-rtl {
+    #{$prop}#{$ltr}: $value;
+  }
+}
+
+@mixin on-dir-auto($prop, $value) {
+  @include on-dir($prop, left, right, $value);
+}
+
+@mixin left-or-right($value) {
+  @include on-dir-auto("", $value);
 }
 
 $phone-max-width: 683px;
