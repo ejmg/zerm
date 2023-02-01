@@ -25,15 +25,6 @@ generate_feed = true
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
-highlight_code = true
-
-# Syntax highlighting theme. See:
-# https://www.getzola.org/documentation/getting-started/configuration/#syntax-highlighting
-# for more information and themes built into Zola.
-highlight_theme = "axar" # Other dark themes that work: "1337", "agola-dark",
-                         # "visual-studio-dark"
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
@@ -129,3 +120,15 @@ disqus = { enabled=false, short_name="" }
 # Table of Contents can be generated for individual articles
 # by adding `ToC = true` in [extra] section in frontmatter
 # ToC = true
+
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+# Syntax highlighting theme. See:
+# https://www.getzola.org/documentation/getting-started/configuration/#syntax-highlighting
+# for more information and themes built into Zola.
+highlight_theme = "axar" # Other dark themes that work: "1337", "agola-dark",
+                         # "visual-studio-dark"
